@@ -1,2 +1,29 @@
-<h1>Products#new</h1>
-<p>Find me in app/views/products/new.html.erb</p>
+
+
+<h1>New Products</h1>
+
+<%= form_for @product do |f| %>
+<p>
+  <%= f.label :name %>
+  <%= f.text_field :name, :required => true %>
+</p>
+<p>
+  <%=  f.label :description %>
+  <%= f.text_field :description, :required => true %>
+</p>
+<p>
+  <%=  f.label :price %>
+  <%= f.text_field :price, :required => true %>
+</p>
+<p>
+  <%=  f.label :tags %>
+  <%= f.text_field :tags, :required => true, :value => @product.tag_list.join(", ") %>
+</p>
+<p>
+  <%= f.label :image %>
+  <%= f.url_field :image, :required => true %>
+</p>
+
+
+<%= f.submit %>
+<% end %>

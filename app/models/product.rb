@@ -6,11 +6,11 @@
 #  name        :text
 #  description :text
 #  image       :text
-#  tags        :text
 #  price       :text
 #  available   :boolean          default(TRUE)
 #  created_at  :datetime
 #  updated_at  :datetime
+#  user_id     :integer
 #
 
 class Product < ActiveRecord::Base

@@ -35,7 +35,7 @@ before_action :check_if_logged_in, :only => [:edit, :update]
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :address, :password, :password_confirmation)
   end
 
   def check_if_admin
