@@ -1,0 +1,41 @@
+<script>
+var addMarker = function (latitude, longitude, name) {
+  handler .addMarker({
+    lat: latitude,
+    lng: longitude,
+    title: 'name',
+    click: function(e) {
+      alert('You clicked in this marker');
+    }
+  });
+};
+</script>
+
+<div class="row">
+  <div class="col-md-6">
+    <% @results.each do |result| %>
+  <%= link_to(image_tag(result.image, :class => 'element'), result ) %>
+  <script>
+  $(document).ready(function () {
+    addMarker(lat: <%= result.user.try(:latitude) %>, lng: <%= result.user.try(:longitude) %>);
+  });
+  </script>
+<%end %>
+  </div>
+
+
+  <div class="col-md-6">
+    <div style='width: 800px;'>
+      <div id="map" style='width: 800px; height: 400px;'>
+      </div>
+    </div>
+  </div>
+
+<script>
+  handler = Gmaps.build('Google');
+handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+  markers = handler.addMarkers(<%=raw @hash.to_json %>);
+  handler.map.centerOn( markers[0] );
+  handler.getMap().setZoom(14);
+})
+</script>

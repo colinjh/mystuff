@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/purchases/search' => 'purchases#search'
+
   root :to => 'products#index'
   get 'session/new'
 

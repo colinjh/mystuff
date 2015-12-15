@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: mystuffapp
+  api_key: '288821382571794'
+  api_secret: s4Muk8YCLDSnhts8Z374ykoh42Q
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: mystuffapp
+  api_key: '288821382571794'
+  api_secret: s4Muk8YCLDSnhts8Z374ykoh42Q
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: mystuffapp
+  api_key: '288821382571794'
+  api_secret: s4Muk8YCLDSnhts8Z374ykoh42Q
+  enhance_image_tag: true
+  static_image_support: false

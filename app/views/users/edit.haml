@@ -4,10 +4,10 @@
       %li= msg
 = form_for @user do |f|
   = f.label :name
-  = f.text_field :name, :required => true
+  = f.text_field :name, :required => true, :class => 'form control'
   = f.label :email
-  = f.email_field :email, :required => true
+  = f.email_field :email, :required => true, :class => 'form control'
   = f.label :address
-  = f.text_field :address, :required => true  
+  = f.text_field :address, :required => true, :class => 'form control'  
 
   = f.submit

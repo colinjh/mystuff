@@ -1,6 +1,6 @@
 .element {
-    min-height: 340px;
-    min-width: 340px;
+    
+    max-width: 200px;
   
 }
 
@@ -9,4 +9,22 @@
 }
 .grid-item--width2 { 
   width: 400px; 
+}
+
+body {
+  padding-top: 50px;
+}
+
+.main-container {
+  padding: 40px 15px;
+}
+
+.p {
+  text-align: center;
+}
+.space {
+  padding-right: 10px;
+}
+.index {
+  position: inline-block;
 }
