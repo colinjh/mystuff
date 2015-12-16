@@ -26,10 +26,10 @@ before_action :check_if_logged_in, :only => [:edit, :update]
   def show
     @user = @current_user
     @users = User.all
-    @hash = Gmaps4rails.build_markers(@users) do |user, marker|
-    marker.lat user.latitude
-    marker.lng user.longitude
-    end
+    # @hash = Gmaps4rails.build_markers(@users) do |user, marker|
+    # marker.lat user.latitude
+    # marker.lng user.longitude
+    # end
   end
 
 
@@ -49,7 +49,7 @@ before_action :check_if_logged_in, :only => [:edit, :update]
   end
 
   def check_if_admin
-    redirect_to root_path unless @current_user.present? && @current_user.admin?
+    # redirect_to root_path unless @current_user.present? && @current_user.admin?
   end
 
   def check_if_logged_in

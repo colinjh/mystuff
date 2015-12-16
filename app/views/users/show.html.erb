@@ -1,21 +1,18 @@
-<h1>My Profile</h1>
-
-
+<%- model_class = User -%>
+<div class="page-header">
+  <h1><%= @user.name.capitalize %></h1>
+</div>
 <div class="row">
-  <div class="col-md-6">
-    <div style='width: 800px;'>
-      <div id="multi_markers" style='width: 800px; height: 400px;'>
-      </div>
+      
+  <div class="col-md-12">
+    <div class="row masonry-container">
+      <% @user.products.each do |product| %>
+        <div class="col-md-4 col-sm-6 item">
+          <div class="thumbnail">
+        <%= link_to(image_tag(product.image, :class => 'preview'), product) %> 
+        </div>
+      </div>  
+      <% end %>
     </div>
-    
-</div>
-    
-    
-  </div>
-  <div class="col-md-6">
-    <% @user.products.each do |product| %>
- <%= link_to(image_tag(product.image, :class => 'thumbnail'), product) %> 
-<% end %>
   </div>
 </div>
-

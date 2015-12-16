@@ -28,3 +28,19 @@ body {
 .index {
   position: inline-block;
 }
+
+.preview {
+  max-width: 300px;
+}
+.box {
+width:100%;
+height: 300px;
+background-size: cover;
+background-position: 50% 50%;
+background-repeat: no-repeat;
+cursor: pointer;
+}
+.button-tag {
+  float: right;
+  margin: 0 auto;
+}

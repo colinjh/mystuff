@@ -26,6 +26,9 @@ gem 'haml'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'gmaps4rails'
 gem 'cloudinary'
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 

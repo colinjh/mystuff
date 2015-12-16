@@ -17,5 +17,9 @@ class Product < ActiveRecord::Base
   acts_as_taggable
   acts_as_taggable_on :tag_list
   belongs_to :user
-  belongs_to :purchase
+  has_many :purchases
+
+  def owner?(user)
+    user.id == self.user_id unless user.nil?
+  end
 end

@@ -22,4 +22,8 @@ class User < ActiveRecord::Base
 
   geocoded_by :address
   after_validation :geocode
+
+  def owner?(user)
+    user.id == self.user_id unless user.nil?
+  end
 end

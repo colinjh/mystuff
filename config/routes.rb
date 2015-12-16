@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root :to => 'products#index'
   get 'session/new'
 
-  resources :products, :users
+  resources :products, :users, :purchases
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'

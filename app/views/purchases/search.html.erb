@@ -1,41 +1,49 @@
 <script>
-var addMarker = function (latitude, longitude, name) {
-  handler .addMarker({
-    lat: latitude,
-    lng: longitude,
-    title: 'name',
-    click: function(e) {
-      alert('You clicked in this marker');
-    }
+  var addMarker, handler = Gmaps.build('Google'), markers = [];
+
+  $(document).ready(function () {
+    addMarker = function (latitude, longitude) {
+      markers.push( { lat: latitude, lng: longitude } );
+    };
   });
-};
 </script>
 
 <div class="row">
   <div class="col-md-6">
     <% @results.each do |result| %>
-  <%= link_to(image_tag(result.image, :class => 'element'), result ) %>
-  <script>
-  $(document).ready(function () {
-    addMarker(lat: <%= result.user.try(:latitude) %>, lng: <%= result.user.try(:longitude) %>);
-  });
-  </script>
-<%end %>
+      <%= link_to(image_tag(result.image, :class => 'element'), result ) %>
+
+      <% if result.user && result.user.latitude && result.user.longitude %>
+        <script>
+
+        $(document).ready(function () {
+          addMarker( parseFloat('<%= result.user.try(:latitude) %>'), parseFloat('<%= result.user.try(:longitude) %>') );
+        });
+        </script>
+      <% end %>
+    <% end %>
   </div>
 
 
   <div class="col-md-6">
     <div style='width: 800px;'>
-      <div id="map" style='width: 800px; height: 400px;'>
+      <div id="map" style='width: 800px; height: 600px;'>
       </div>
     </div>
   </div>
 
 <script>
-  handler = Gmaps.build('Google');
-handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-  markers = handler.addMarkers(<%=raw @hash.to_json %>);
-  handler.map.centerOn( markers[0] );
-  handler.getMap().setZoom(14);
-})
+  $(document).ready(function () {
+
+    handler.buildMap({ 
+      provider: {}, 
+      internal: { id: 'map' }}, 
+      function(){
+        markers = handler.addMarkers( markers );
+        handler.map.centerOn( markers[0] );
+        handler.getMap().setZoom(11);
+      }
+    );
+
+  });
 </script>
