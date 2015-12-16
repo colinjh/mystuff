@@ -3,24 +3,24 @@
 <div class="container main-container">
 
   <div role="tabpanel">
-
-<div class="row masonry-container">
-  <% @products.each do |product| %>
-    <div class="col-md-4 col-sm-6 item">
-      <div class="thumbnail index">
-        <%= link_to(image_tag(product.image), product, :class =>"element") %>
-          <a href="<%= purchases_path %>?product_id=<%= product.id %>" data-method="post" data-remote="true" rel="nofollow">
-            <% unless @current_user.purchases.find_by_product_id( product.id ).nil? %>
-              <button class="preview btn btn-default btn-sm">
-            <% else %>
-              <button class="preview btn btn-danger btn-sm">
-            <% end %>
-            <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> 
-          </button>
-        </a>
-        <p class="button-tag">Tags: <%= product.tag_list %></p>
+  <div class="row masonry-container">
+    <% @products.each do |product| %>
+      <div class="col-md-4 col-sm-6 item">
+        <div class="thumbnail index">
+          <%= link_to(image_tag(product.image), product, :class =>"element") %>
+            <a href="<%= purchases_path %>?product_id=<%= product.id %>" data-method="post" data-remote="true" rel="nofollow">
+              <% if @current_user %>
+                <% unless @current_user.purchases.find_by_product_id( product.id ).nil? %>
+                  <button class="preview btn btn-default btn-sm">
+                <% else %>
+                  <button class="preview btn btn-danger btn-sm">
+                <% end %>
+                  <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> 
+                </button>
+              <% end %>
+          </a>
+          <p class="button-tag">Tags: <%= product.tag_list %></p>
+        </div>
       </div>
-    </div>
-  <% end %>
-</div>
-
+    <% end %>
+  </div>
