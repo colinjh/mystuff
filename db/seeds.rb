@@ -26,8 +26,8 @@ Purchase.create!([
   {user_id: 5, product_id: 23, price: nil}
 ])
 User.create!([
-  {name: "test", email: "test@gmail.com", address: nil, latitude: nil, longitude: nil, password_digest: nil},
-  {name: "test2", email: "test2@gmail.com", address: nil, latitude: nil, longitude: nil, password_digest: nil},
+  {name: "test", email: "test@gmail.com", address: nil, latitude: nil, longitude: nil, password: "chicken", password_confirmation: "chicken"},
+  {name: "test2", email: "test2@gmail.com", address: nil, latitude: nil, longitude: nil, password: "chicken", password_confirmation: "chicken"},
   {name: "Wolf", email: "wolf@wolf.com", address: "37 Bligh St Sydney", latitude: -33.866033, longitude: 151.209812, password: "chicken", password_confirmation: "chicken"},
   {name: "harry", email: "harry@gmail.com", address: "232 Oxford St, Bondi Junction", latitude: -33.890294, longitude: 151.243426, password: "chicken", password_confirmation: "chicken"},
   {name: "Lauren", email: "lauren@gmail.com", address: "17 Proctor Av, Kingsgrove", latitude: -33.930264, longitude: 151.102589, password: "chicken", password_confirmation: "chicken"}
