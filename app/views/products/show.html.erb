@@ -19,10 +19,12 @@
       <dd><%= @product.description %></dd>
       <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
       <dd><%= @product.price %></dd>
+      <dt><strong>Tags:</strong></dt>
+      <dd><%= @product.tag_list %></dd>
       <dt><strong><%= model_class.human_attribute_name(:available) %>:</strong></dt>
       <dd><%= @product.available %></dd>
       <dt><strong>Item Owner:</strong></dt>
-      <dd><%= @product.user.name %></dd>
+      <dd><%= @product.user.name if @product.user %></dd>
     </dl>
 <%= link_to t('.back', :default => t("helpers.links.back")),
               products_path, :class => 'btn btn-default'  %>
