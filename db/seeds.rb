@@ -1,3 +1,5 @@
+Product.destroy_all
+
 Product.create!([
   {name: "Silver Spoon", description: nil, image: "http://www.leopardantiques.com/object/image/download/641/Regimental%20Silver%20spoon%20-%20Inns%20of%20Court%20Rifle%20Volunteers_Regimental%20spoon.Jpg", price: nil, available: true, user_id: 4},
   {name: "Blue vase", description: "a Blue vase", image: "http://res.cloudinary.com/mystuffapp/image/upload/v1450174251/ypkgzabfaym9ykkovmvu.jpg", price: "$20", available: true, user_id: 5},
@@ -9,6 +11,7 @@ Product.create!([
   {name: "Grey Wolf", description: nil, image: "http://res.cloudinary.com/mystuffapp/image/upload/v1450155399/vpfjtlfzmdosd5yfze0v.jpg", price: nil, available: true, user_id: 4},
   {name: "Candle Holders", description: "grey candle holders", image: "http://res.cloudinary.com/mystuffapp/image/upload/v1450158740/rzg8vtlspo2qarymlsdn.jpg", price: "$20", available: true, user_id: 4}
 ])
+Purchase.destroy_all
 Purchase.create!([
   {user_id: 5, product_id: 14, price: nil},
   {user_id: 5, product_id: 15, price: nil},
@@ -25,6 +28,7 @@ Purchase.create!([
   {user_id: 5, product_id: 23, price: nil},
   {user_id: 5, product_id: 23, price: nil}
 ])
+User.destroy_all
 User.create!([
   {name: "test", email: "test@gmail.com", address: nil, latitude: nil, longitude: nil, password: "chicken", password_confirmation: "chicken"},
   {name: "test2", email: "test2@gmail.com", address: nil, latitude: nil, longitude: nil, password: "chicken", password_confirmation: "chicken"},

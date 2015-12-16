@@ -1,9 +1,19 @@
+<script>
+  var addMarker, handler = Gmaps.build('Google'), markers = [];
+
+  $(document).ready(function () {
+    addMarker = function (latitude, longitude) {
+      markers.push( { lat: latitude, lng: longitude } );
+    };
+  });
+</script>
+
 <%- model_class = Product -%>
 <div class="page-header">
   <h1><%= @product.name %></h1>
 </div>
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-4">
     <dl class="dl-horizontal">
       <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
       <dd><%= @product.description %></dd>
@@ -26,7 +36,15 @@
                   :class => 'btn btn-danger' %>
 <% end %>
 </div>
-  <div class="col-md-6">
+  <div class="col-md-4">
     <%= image_tag(@product.image)%>
+  </div>
+
+  <div class="col-md-4">
+    <div style='width: 800px;'>
+      <div id="map" style='width: 800px; height: 400px;'>
+      </div>
+    </div>
+    
   </div>
 </div>
