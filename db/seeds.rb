@@ -28,7 +28,7 @@ Purchase.create!([
 User.create!([
   {name: "test", email: "test@gmail.com", address: nil, latitude: nil, longitude: nil, password_digest: nil},
   {name: "test2", email: "test2@gmail.com", address: nil, latitude: nil, longitude: nil, password_digest: nil},
-  {name: "Wolf", email: "wolf@wolf.com", address: "37 Bligh St Sydney", latitude: -33.866033, longitude: 151.209812, password_digest: "$2a$10$/6alFR..A5sosKPCg1WyKOjZR4UEvqkl8Lzr/zti7FXZlPLqPhwGa"},
-  {name: "harry", email: "harry@gmail.com", address: "232 Oxford St, Bondi Junction", latitude: -33.890294, longitude: 151.243426, password_digest: "$2a$10$yySNgavd3RqH7oINAJ.StuRMEMimL1de/UGUG7Zlsax7BEu7YPK/u"},
-  {name: "Lauren", email: "lauren@gmail.com", address: "17 Proctor Av, Kingsgrove", latitude: -33.930264, longitude: 151.102589, password_digest: "$2a$10$Hccj0PhDb0vRe2SkRQHNSeph/XMTizj1Xllm5Iyg3DhiO0l6OF/RC"}
+  {name: "Wolf", email: "wolf@wolf.com", address: "37 Bligh St Sydney", latitude: -33.866033, longitude: 151.209812, password: "chicken", password_confirmation: "chicken"},
+  {name: "harry", email: "harry@gmail.com", address: "232 Oxford St, Bondi Junction", latitude: -33.890294, longitude: 151.243426, password: "chicken", password_confirmation: "chicken"},
+  {name: "Lauren", email: "lauren@gmail.com", address: "17 Proctor Av, Kingsgrove", latitude: -33.930264, longitude: 151.102589, password: "chicken", password_confirmation: "chicken"}
 ])
