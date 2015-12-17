@@ -5,9 +5,9 @@
   %div.form-group
     = label_tag 'Email' 
     %div.col-lg-10  
-      = text_field_tag :email, nil, :autofocus => true, :required => true, :class => 'form control' 
+    = text_field_tag :email, nil, :autofocus => true, :required => true, :class => 'form control' 
   %div.form-group
     = label_tag 'Password'
     %div.col-lg-10   
-      = password_field_tag :password, nil, :required => true, :class => 'form control'
+    = password_field_tag :password, nil, :required => true, :class => 'form control'
     = submit_tag 'Login', :class => 'form control'

@@ -60,4 +60,5 @@ cursor: pointer;
 }
 .search {
   max-width: 200px;
+  position: inline-block;
 }
