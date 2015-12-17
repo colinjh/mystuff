@@ -19,7 +19,8 @@
                 </button>
               <% end %>
           </a>
-          <p class="button-tag"><strong>Tags: <%= product.tag_list %></strong></p>
+          <p><strong><%= product.name.capitalize %></strong></p>
+          <p>Tags:<strong> <%= product.tag_list %></strong></p>
           <p>Owner: <strong><%= product.user.name.capitalize %></strong></p>
         </div>
       </div>
