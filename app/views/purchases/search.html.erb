@@ -11,7 +11,7 @@
 <div class="row">
   <div class="col-md-6">
     <% @results.each do |result| %>
-      <%= link_to(image_tag(result.image, :class => 'element'), result ) %>
+      <%= link_to(image_tag(result.image, :class => 'search'), result ) %>
 
       <% if result.user && result.user.latitude && result.user.longitude %>
         <script>

@@ -58,3 +58,6 @@ cursor: pointer;
 .image-show {
   max-width: 100%;
 }
+.search {
+  max-width: 200px;
+}
