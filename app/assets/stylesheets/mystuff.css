@@ -5,6 +5,9 @@
     text-align:center;
   
 }
+.purchase-index {
+  max-width: 300px;
+}
 
 .grid-item { 
   width: 200px; 
