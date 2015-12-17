@@ -45,5 +45,5 @@ cursor: pointer;
   margin: 0 auto;
 }
 .image-show {
-  max-width: 400px;
+  max-width: 100%;
 }
