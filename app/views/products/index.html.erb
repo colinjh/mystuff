@@ -21,7 +21,7 @@
           </a>
           <p><strong><%= product.name.capitalize %></strong></p>
           <p>Tags:<strong> <%= product.tag_list %></strong></p>
-          <p>Owner: <strong><%= product.user.name.capitalize %></strong></p>
+          <p>Owner: <strong><%= product.user.name.capitalize if product.user %></strong></p>
         </div>
       </div>
     <% end %>
