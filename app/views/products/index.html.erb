@@ -4,16 +4,16 @@
 
   <div role="tabpanel">
   <div class="row masonry-container">
-    <% @products.each do |product| %>
+    <% @products.shuffle.each do |product| %>
       <div class="col-md-4 col-sm-6 item">
         <div class="thumbnail index">
           <%= link_to(image_tag(product.image), product, :class =>"element") %>
             <a href="<%= purchases_path %>?product_id=<%= product.id %>" data-method="post" data-remote="true" rel="nofollow">
               <% if @current_user %>
                 <% unless @current_user.purchases.find_by_product_id( product.id ).nil? %>
-                  <button class="preview btn btn-default btn-sm">
-                <% else %>
                   <button class="preview btn btn-danger btn-sm">
+                <% else %>
+                  <button class="preview btn btn-default btn-sm">
                 <% end %>
                   <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> 
                 </button>
